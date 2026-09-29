@@ -1,0 +1,17 @@
+numpy==1.26.4
+opencv-python==4.8.1.78
+
+paddlepaddle==3.0.0
+paddleocr==3.7.0
+paddlex==3.7.2
+
+torch==2.14.0
+ultralytics==8.4.164
+
+python-dotenv==1.0.0
+click==8.1.7
+supabase==2.31.0
+fastapi==0.115.0
+uvicorn==0.30.6
+pydantic==2.11.7
+python-multipart==0.0.9
