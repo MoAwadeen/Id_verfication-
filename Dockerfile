@@ -11,8 +11,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-# CPU-only torch first (the default Linux wheel pulls ~2GB of CUDA libs)
-RUN pip install torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
+# CPU-only torch + matching torchvision first (the default Linux wheel pulls ~2GB of CUDA libs,
+# and a torchvision from PyPI won't match the CPU torch build)
+RUN pip install torch==2.14.0 torchvision==0.29.0 --index-url https://download.pytorch.org/whl/cpu
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
