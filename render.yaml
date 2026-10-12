@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: id-verification-api
+    runtime: docker
+    plan: standard        # 2 GB RAM; use pro (4 GB) if you hit OOM
+    healthCheckPath: /health
+    envVars:
+      - key: SUPABASE_URL
+        sync: false       # set in the Render dashboard
+      - key: SUPABASE_KEY
+        sync: false
+      - key: THREAD_POOL_WORKERS
+        value: "2"
