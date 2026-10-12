@@ -101,6 +101,11 @@ app.dependency_overrides[get_yolo_model] = _get_yolo_model
 app.include_router(verification_router)
 
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+
 if __name__ == "__main__":
     import uvicorn
     print("Starting ID Verification API on http://0.0.0.0:8000")
